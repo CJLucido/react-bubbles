@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Login from "./components/Login";
+import BubblePage from './components/BubblePage'
 import "./styles.scss";
 
 import PrivateRoute from './components/Organisms/PrivateRoute'
@@ -20,13 +21,13 @@ function App() {
                 </li>
 
                 <li>
-                  <Link to='/bubblelist'>Friends</Link>
+                  <Link to='/bubblepage'>Friends</Link>
                 </li>
               </ul>
 
               <Switch>
-              <PrivateRoute path="/bubblelist">
-                <FriendsList/>
+              <PrivateRoute path="/bubblepage">
+                <BubblePage/>
               </PrivateRoute>
                 <Route path="/login" component={Login}/>
                 <Route component={Login}/>
