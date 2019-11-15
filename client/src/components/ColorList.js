@@ -39,10 +39,8 @@ const authAxios = axiosWithAuth()
     .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, 
     colorToEdit)
     .then(res =>{
-      let newColors =[res.data];
-      console.log("this is newColors", newColors)
-      //updateColors(colors)
-      console.log('this is put res', res)
+      let newColors = colors.filter(color => color.id !== res.data.id).concat(res.data);
+        updateColors(newColors)
       })
     .catch(err => console.log("this is err", err))
 
