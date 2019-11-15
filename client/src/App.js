@@ -30,7 +30,7 @@ function App() {
 
               <Switch>
               <PrivateRoute path="/bubblepage">
-                <BubblePage/>
+                <BubblePage />
               </PrivateRoute>
                 <Route path="/login" component={Login}/>
                 <Route component={Login}/>

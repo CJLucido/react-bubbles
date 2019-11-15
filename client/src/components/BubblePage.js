@@ -28,7 +28,8 @@ useEffect(()=>{
           }
       })
       .then(res => {
-          console.log("this is fetch res", res);
+          console.log("this is fetch res.data", res.data); //code object, color string, id num
+          setColorList(res.data)
         
       })
       .catch(err => {
@@ -37,25 +38,6 @@ useEffect(()=>{
  
 
 }, [])
-//   const fetchColors = () => {
-//     const authAxios = axiosWithAuth();
-//     authAxios
-//         .get('http://localhost:5000/api/colors', {
-//             headers: {
-//                 Authorization: localStorage.getItem("token"),
-//             }
-//         })
-//         .then(res => {
-//             console.log("this is fetch res", res);
-          
-//         })
-//         .catch(err => {
-//             console.log("this is fetching error", err)
-//         })
-   
-// } 
-
-
 
 
   return (
