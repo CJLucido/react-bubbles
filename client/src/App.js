@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
+///////////////////PAGES/////////////////
 import Login from "./components/Login";
 import BubblePage from './components/BubblePage'
 import "./styles.scss";
 
+///////////////////ORGANISMS/MODULES//////////////////
 import PrivateRoute from './components/Organisms/PrivateRoute'
 
 function App() {
 
+  
 
 
   return (
