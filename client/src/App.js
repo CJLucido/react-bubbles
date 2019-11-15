@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import Login from "./components/Login";
 import BubblePage from './components/BubblePage'
@@ -21,7 +21,7 @@ function App() {
                 </li>
 
                 <li>
-                  <Link to='/bubblepage'>Friends</Link>
+                  <Link to='/bubblepage'>BubblePage</Link>
                 </li>
               </ul>
 
