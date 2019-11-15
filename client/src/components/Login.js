@@ -14,15 +14,15 @@ const Login = (props) => {
 
  
 
-  const login = (payload, data) => {
+  const login = (payload) => {
   
     axios
         .post('http://localhost:5000/api/login', payload)
         .then(res => {
             console.log("this is res.data", res.data);
-
+            localStorage.setItem('token', res.data.payload)
             
-            // return data.history.push("/bubblepage")
+            // return props.history.push("/bubblepage")
         })
         .catch(err => {
             console.log("this is login error", err)
@@ -35,7 +35,7 @@ const Login = (props) => {
           username: userInput['username'],
           password: userInput['password']
       }
-      login(captureEntries, props)
+      login(captureEntries)
   
  
   }
