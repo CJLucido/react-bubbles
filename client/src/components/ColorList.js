@@ -26,6 +26,8 @@ useEffect(()=> {
     }
 })
 }, [])
+
+
   
 const authAxios = axiosWithAuth()
   const saveEdit = e => {
@@ -36,7 +38,12 @@ const authAxios = axiosWithAuth()
     authAxios
     .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, 
     colorToEdit)
-    .then(res => console.log("this is response", res))
+    .then(res =>{
+      let newColors =[res.data];
+      console.log("this is newColors", newColors)
+      //updateColors(colors)
+      console.log('this is put res', res)
+      })
     .catch(err => console.log("this is err", err))
 
   };
@@ -53,7 +60,10 @@ const authAxios = axiosWithAuth()
           'Authorization': localStorage.getItem('token'),
       }
       })
-      .then(res => console.log(res))
+      .then(res => {
+        let newColors = colors.filter(color => color.id !== res.data);
+        updateColors(newColors)
+      })
       .catch(err => console.log("this is delete err", err))
   };
 
